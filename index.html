@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a1120">
+  <meta
+    name="description"
+    content="الملف الأكاديمي ومعلومات التواصل الخاصة بمحمد حللي علي الحللي."
+  >
+  <title>الملف الأكاديمي | محمد حللي علي الحللي</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --navy: #0a1120;
+      --navy-soft: #101b2d;
+      --card: rgba(18, 29, 47, 0.88);
+      --gold: #d7b56d;
+      --gold-light: #f0d99c;
+      --text: #f5f2eb;
+      --muted: #aab4c3;
+      --line: rgba(215, 181, 109, 0.2);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Segoe UI", Tahoma, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      padding: 48px 20px;
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+      color: var(--text);
+      font-family: var(--sans);
+      background:
+        radial-gradient(ellipse at 15% 15%, rgba(35, 57, 83, 0.48), transparent 34rem),
+        radial-gradient(ellipse at 88% 82%, rgba(97, 72, 32, 0.16), transparent 30rem),
+        var(--navy);
+    }
+
+    body::before,
+    body::after {
+      position: fixed;
+      z-index: -1;
+      width: 380px;
+      height: 380px;
+      border: 1px solid rgba(215, 181, 109, 0.08);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    body::before {
+      top: -245px;
+      right: -120px;
+      box-shadow: 0 0 0 35px rgba(215, 181, 109, 0.025),
+                  0 0 0 70px rgba(215, 181, 109, 0.02);
+    }
+
+    body::after {
+      bottom: -285px;
+      left: -145px;
+      box-shadow: 0 0 0 35px rgba(215, 181, 109, 0.025),
+                  0 0 0 70px rgba(215, 181, 109, 0.02);
+    }
+
+    .profile {
+      width: min(100%, 720px);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--card);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+      backdrop-filter: blur(14px);
+    }
+
+    .profile__top {
+      position: relative;
+      padding: 44px 48px 38px;
+      text-align: center;
+      background:
+        linear-gradient(145deg, rgba(30, 45, 67, 0.8), rgba(13, 22, 37, 0.42));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .profile__top::before {
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(215, 181, 109, 0.1);
+      border-radius: 16px;
+      content: "";
+      pointer-events: none;
+    }
+
+    .seal {
+      position: relative;
+      display: grid;
+      width: 82px;
+      height: 82px;
+      margin: 0 auto 22px;
+      place-items: center;
+      border: 1px solid rgba(215, 181, 109, 0.55);
+      border-radius: 50%;
+      color: var(--gold-light);
+      background: rgba(215, 181, 109, 0.07);
+      box-shadow: 0 0 32px rgba(215, 181, 109, 0.1);
+    }
+
+    .seal svg {
+      width: 38px;
+      height: 38px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(1.7rem, 5vw, 2.45rem);
+      line-height: 1.5;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .profile__content {
+      padding: 34px 48px 40px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 22px;
+      color: var(--gold-light);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .section-heading::after {
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(to left, var(--line), transparent);
+      content: "";
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 0;
+    }
+
+    .detail {
+      min-width: 0;
+      padding: 19px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.025);
+      transition: border-color 180ms ease, background 180ms ease,
+                  transform 180ms ease;
+    }
+
+    .detail:hover {
+      transform: translateY(-2px);
+      border-color: rgba(215, 181, 109, 0.32);
+      background: rgba(215, 181, 109, 0.045);
+    }
+
+    .detail--wide {
+      grid-column: 1 / -1;
+    }
+
+    .detail dt {
+      margin-bottom: 9px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .detail dd {
+      margin: 0;
+      color: var(--text);
+      font-size: 1.02rem;
+      font-weight: 600;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+    }
+
+    .level {
+      display: inline-block;
+      margin-inline-start: 7px;
+      padding: 3px 9px;
+      border: 1px solid rgba(215, 181, 109, 0.3);
+      border-radius: 999px;
+      color: var(--gold-light);
+      background: rgba(215, 181, 109, 0.08);
+      font-size: 0.76rem;
+      font-weight: 600;
+      vertical-align: 2px;
+    }
+
+    .contact-link {
+      color: var(--gold-light);
+      text-decoration: none;
+      direction: ltr;
+      unicode-bidi: isolate;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .profile__footer {
+      padding: 18px 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      color: #8490a1;
+      font-size: 0.78rem;
+      text-align: center;
+    }
+
+    @media (max-width: 560px) {
+      body {
+        padding: 24px 14px;
+      }
+
+      .profile {
+        border-radius: 19px;
+      }
+
+      .profile__top {
+        padding: 38px 24px 30px;
+      }
+
+      .profile__content {
+        padding: 28px 22px 30px;
+      }
+
+      .details {
+        grid-template-columns: 1fr;
+      }
+
+      .detail--wide {
+        grid-column: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="profile" aria-labelledby="profile-name">
+    <header class="profile__top">
+      <div class="seal" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 17.5 24 10l15 7.5L24 25 9 17.5Z"
+                stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M15 21v8c4.8 4.1 13.2 4.1 18 0v-8M39 18v12"
+                stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+                stroke-linejoin="round"/>
+          <circle cx="39" cy="33" r="2" fill="currentColor"/>
+        </svg>
+      </div>
+      <p class="eyebrow">الملف الأكاديمي</p>
+      <h1 id="profile-name">محمد حللي علي الحللي</h1>
+      <p class="subtitle">طالب تقنية معلومات</p>
+    </header>
+
+    <section class="profile__content" aria-labelledby="details-heading">
+      <h2 class="section-heading" id="details-heading">المعلومات الشخصية والأكاديمية</h2>
+
+      <dl class="details">
+        <div class="detail detail--wide">
+          <dt>الجامعة</dt>
+          <dd>الجامعة التخصصية الحديثة</dd>
+        </div>
+
+        <div class="detail">
+          <dt>التخصص</dt>
+          <dd>تقنية معلومات <span class="level">المستوى الثالث</span></dd>
+        </div>
+
+        <div class="detail">
+          <dt>رقم التواصل</dt>
+          <dd>
+            <a class="contact-link" href="tel:772439168" aria-label="اتصل على 772439168">
+              772439168
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <footer class="profile__footer">
+      الملف الأكاديمي الشخصي
+    </footer>
+  </main>
+</body>
+</html>
